@@ -1,7 +1,10 @@
 class ReviewsController < ApplicationController
 
-  before_action :authorize, only: [:new, :create]
-  before_action :authorize_admin, only: [:new, :create, :edit, :destroy]
+  before_action :authenticate_user!, except: [:show, :index, :welcome]
+
+  # before_action :authorize_admin, only: [:new, :create, :edit, :destroy]
+  # before_action :authorize, except: [:edit, :destroy]
+  # before_action :authenticate_user!, :except => [:edit, :destroy]
 
   rescue_from ActiveRecord::RecordNotFound do
     flash[:alert] = 'The record you tried to access no longer exists.'

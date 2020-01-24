@@ -7,16 +7,21 @@ class ApplicationController < ActionController::Base
 
 
   def authorize
+    # binding.pry
     if !current_user
-      flash[:alert] = "You aren't authorized to visit that page."
+      flash[:alert] = "Please sign in to do that."
       redirect_to '/'
     end
   end
 
   def authorize_admin
-    if current_user.admin != true
-      flash[:alert] = "You aren't authorized to visit that page."
-      redirect_to request.referrer
+    if user_signed_in? != false
+      flash[:alert] = "Please sign in as admin to do that."
+      redirect_to '/'
+      if current_user.admin != true
+        flash[:alert] = "Sorry, only admins are allowed to do that."
+        redirect_to request.referrer
+      end
     end
   end
 
