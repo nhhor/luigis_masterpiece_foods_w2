@@ -1,5 +1,7 @@
 # Application: **Luigi's Masterpiece Foods**
 **A Ruby product review site.**
+**A Ruby product review site. Now with user & admin authentication!**
+
 
 ##### By Noah Horwitz
 
@@ -44,6 +46,8 @@ This application was made as part of a coding project for Noah Horwitz, a studen
 |User should be able to click on a created product and in the resulting view be able to **C**reate a new review for that product and it will display (**R**ead) all reviews entered.|... click_on `Product2`, fill_in `review1`, click_on `Add review` |Product Name: _Product2_, Product reviews: _review1_|
 |User should be able to click on a created review and add in the resulting view be able to **U**pdate the review.|... click_on `review1`, fill_in `reviewA`, click_on `Update review` |Product Name: Product2, Product reviews: _reviewA_|
 |User should be able to click on a created review and add in the resulting view be able to **D**elete the review.|... click_on `reviewA`, click_on `Delete review` |Current reviews _[none]_|
+||||
+
 ||||
 
 ## References
