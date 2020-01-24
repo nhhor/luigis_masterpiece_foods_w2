@@ -27,6 +27,14 @@ describe "User" do
     expect(page).to have_content 'Logged in as user@user.com'
   end
 
+  it "logs a user out when requested" do
+    user = FactoryBot.create(:user)
+    login_as(user)
+    visit '/'
+    click_link 'Sign out'
+    expect(page).to have_content 'Signed out successfully.'
+  end
+
 
 end
 

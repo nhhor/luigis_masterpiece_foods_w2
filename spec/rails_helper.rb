@@ -24,10 +24,10 @@ include Warden::Test::Helpers
 
 # ~NH~ ADDED FOR TEST RESET ASST PER Devise's How To: Test with Capybara
 RSpec.configure do |config|
-#   config.include Warden::Test::Helpers
-config.after :each do
-Warden.test_reset!
-end
+  #   config.include Warden::Test::Helpers
+  config.after :each do
+    Warden.test_reset!
+  end
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
