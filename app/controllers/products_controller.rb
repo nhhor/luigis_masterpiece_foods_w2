@@ -1,5 +1,8 @@
 class ProductsController < ApplicationController
 
+  before_action :authorize, only: [:new, :create]
+  before_action :authorize_admin, only: [:new, :create, :edit, :destroy]
+
   rescue_from ActiveRecord::RecordNotFound do
     flash[:alert] = 'The record you tried to access no longer exists.'
     render :sorry   # or e.g. redirect_to :action => :index
