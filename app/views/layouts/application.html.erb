@@ -15,6 +15,15 @@
 
   <div class="container">
 
+
+    <% if user_signed_in? %>
+      <%= link_to "Home", '/' %> | Logged in as <%= current_user.email %> | <%= link_to "Sign out", '/users/sign_out' %> <BR>
+    <% else %>
+      <%= link_to "Home", '/' %> | <%= link_to "Sign up", '/users/sign_up' %> | <%= link_to "Sign in", '/users/sign_in' %>
+    <% end %>
+    <hr>
+
+
     <% content_for(:navbar) do %>
     <h2 class="navbar"><a href="/">Home</a> |
       <%= link_to "Products", products_path %>
