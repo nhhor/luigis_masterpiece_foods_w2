@@ -1,0 +1,38 @@
+<h3>Ciao!</h3>
+<h4>My name is Luigi Mario and I am the proprietor of one of the few remaining Olde World Italian Market's in the Greater Portland area. My brother Mario and I are very proud of our family-owned gourmet market and we'd love for you to come check us out.</h4>
+
+<hr>
+
+<div class="row">
+
+  <div class="col-sm-6">
+    <% if @most_recent_products.any? %>
+    <h5>Check out our three newest products:</h5>
+    <ul>
+      <% @most_recent_products.each do |product| %>
+      <li>
+        <%= link_to product.name, product_path(product.id) %> | added on <%= product.created_at.year %>-<%= product.created_at.month %>-<%= product.created_at.day %> @ <%= (product.created_at.time.hour) %>:<%= (product.created_at.strftime("%M:%S")) %>
+      </li>
+      <% end %>
+    </ul>
+    <% else %>
+    <p>There is currently no recent products.</p>
+    <% end %>
+  </div>
+
+  <div class="col-sm-6">
+    <% if @most_reviews.any? %>
+    <h5>Learn more about our most reveiwed product:</h5>
+    <ul>
+      <% @most_reviews.each do |product| %>
+      <li>
+        <%= link_to product.name, product_path(product.id) %>
+      </li>
+      <% end %>
+    </ul>
+    <% else %>
+    <p>There is currently no product with the most reviews.</p>
+    <% end %>
+  </div>
+
+</div>

@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>LuigisMasterpieceFoods</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Luigi's Masterpiece Foods</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
+  <%= image_tag("lmf.png", class: "LMFBanner", alt: "LMF Logo") %>
+  <!-- <h1>Luigi's Masterpiece Foods</h1> -->
+
+  <div class="container">
+
+    <% content_for(:navbar) do %>
+    <h2 class="navbar"><a href="/">Home</a> |
+      <%= link_to "Products", products_path %>
+    </h2>
+    <% end %>
+    <%= yield :navbar %>
+
+    <hr>
+
+    <div class="noticeFloat">
+      <%= flash[:notice] %>
+    </div>
+
+    <div class="alertFloat">
+      <%= flash[:alert] %>
+    </div>
+
     <%= yield %>
-  </body>
+
+  </div>
+</body>
 </html>
