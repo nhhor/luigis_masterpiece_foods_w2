@@ -9,9 +9,7 @@ describe "User" do
     click_on 'Log in'
     expect(page).to have_content 'Signed in successfully.'
   end
-# end
-#
-# describe "User" do
+
   it "logs in as an user" do
     user = FactoryBot.create(:user)
     visit '/users/sign_in'
@@ -20,7 +18,19 @@ describe "User" do
     click_on 'Log in'
     expect(page).to have_content 'Signed in successfully.'
   end
+
+
+  it "logs in as an user with Warden::Test::Helpers" do
+    user = FactoryBot.create(:user)
+    login_as(user)
+    visit '/'
+    expect(page).to have_content 'Logged in as user@user.com'
+  end
+
+
 end
+
+
 
 # it "gives an error when no name is entered" do
 #   visit new_product_path
