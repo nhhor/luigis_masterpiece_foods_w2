@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   before_action :authenticate_user!, except: [:show, :index, :welcome]
-  # before_action :authorize_admin, only: [:new, :create, :edit, :destroy]
+  before_action :authorize_admin, only: [:new, :create, :edit, :destroy]
 
   rescue_from ActiveRecord::RecordNotFound do
     flash[:alert] = 'The record you tried to access no longer exists.'
@@ -9,12 +9,9 @@ class ProductsController < ApplicationController
   end
 
   def welcome
-    # binding.pry
-
     @products = Product.all
     @most_reviews = Product.most_reviews
     @most_recent_products = Product.most_recent_products
-
     render :welcome
   end
 
