@@ -11,8 +11,6 @@ describe Product do
   it { should validate_presence_of :country_of_origin }
 end
 
-
-
 describe Product do
   it("titleizes the name of a product") do
     product = Product.create({name: "taco salad", cost: 1.99, country_of_origin: "USA"})

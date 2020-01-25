@@ -22,12 +22,3 @@ describe Review do
   it { should validate_length_of(:content_body).is_at_least(50)}
   it { should validate_length_of(:content_body).is_at_most(250)}
 end
-
-
-
-# describe Division do
-#   it("titleizes the name of an employee") do
-#     division = Division.create({division_name: "giant steps"})
-#     expect(division.division_name()).to(eq("Giant Steps"))
-#   end
-# end
