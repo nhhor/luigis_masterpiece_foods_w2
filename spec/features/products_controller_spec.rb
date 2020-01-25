@@ -5,7 +5,7 @@ describe "Products" do
   it "handles missing/removed products correctly" do
     user = FactoryBot.create(:user)
     login_as(user)
-    visit '/products/999'
+    visit '/products/9999'
     expect(page).to have_content 'The record you tried to access no longer exists.'
   end
 
@@ -16,6 +16,7 @@ describe "Products" do
     click_link 'Products'
     click_link 'Add new product'
     expect(page).to have_content 'New product'
+    expect(page).to have_content 'Cost'
   end
 
   it "creates a new product" do
@@ -41,7 +42,6 @@ describe "Products" do
     expect(page).to have_content 'There was a problem creating this product!'
     expect(page).to have_content "Name can't be blank"
   end
-
 
 end
 
