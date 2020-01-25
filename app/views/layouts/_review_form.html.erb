@@ -1,11 +1,14 @@
 <%= render "layouts/errors", :object => @review %>
 
+
+<%= image_tag("mystery-block.gif", class: "mystery", alt: "mystery block") %>
+
 <%= form_for [@product, @review] do |f| %>
   <%= f.label :author %>
-  <%= f.text_field :author %>
+  <%= f.text_field :author %><br>
   <%= f.label :content_body %>
-  <%= f.text_area :content_body %>
+  <%= f.text_area :content_body %><br>
   <%= f.label :rating %>
-  <%= f.number_field :rating %>
-  <p><%= f.submit %></p>
+  <%= f.number_field :rating %><br>
+<p><%= f.submit %></p>
 <% end %>

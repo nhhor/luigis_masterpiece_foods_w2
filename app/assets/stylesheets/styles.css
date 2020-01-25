@@ -1,11 +1,13 @@
 body {
-  background: rgb(128,128,128);
-  background: linear-gradient(270deg, rgba(128,128,128,0) 90%, rgba(114, 73, 74, 1) 100%);
+  /* background: rgb(128,128,128); */
+  /* background: linear-gradient(270deg, rgba(128,128,128,0) 90%, rgba(114, 73, 74, 1) 100%); */
+  background-color: #eeeeee;
+  background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23ffdddd' fill-opacity='1'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* tint */
 h1 {
-  color: rgba(191, 232, 231, 1);
+  color: rgba(141, 182, 181, 1);
 }
 
 /* primary */
@@ -31,6 +33,13 @@ em {
   width: 60%;
   margin-left: 10%;
   margin-top: 10px;
+}
+
+.mystery {
+  width: 10%;
+  min-width: 50px;
+  /* margin-left: 10%; */
+  /* margin-top: 10px; */
 }
 
 .navbar {
